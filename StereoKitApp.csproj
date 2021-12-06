@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <LangVersion>8</LangVersion>
+    <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;Debug2;Debug3;OculusDebug</Configurations>
+    <Platforms>AnyCPU;ARM64</Platforms>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Hide platform project folders from the solution explorer -->
+  <ItemGroup>
+    <Compile Remove="Platforms\**" />
+    <EmbeddedResource Remove="Platforms\**" />
+    <None Remove="Platforms\**" />
+  </ItemGroup>
+
+  <!-- Hide test project folders from the solution explorer -->
+  <ItemGroup>
+    <Compile Remove="StereoKitApp.Tests\**" />
+    <EmbeddedResource Remove="StereoKitApp.Tests\**" />
+    <None Remove="StereoKitApp.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SKShader Include="Assets\floor.hlsl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Ruffles" Version="11.1.5" />
+    <PackageReference Include="SharpGLTF.Core" Version="1.0.0-alpha0023" />
+    <PackageReference Include="SharpGLTF.Toolkit" Version="1.0.0-alpha0023" />
+    <PackageReference Include="StereoKit" Version="0.3.5-preview.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

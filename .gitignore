@@ -1,0 +1,10 @@
+# IDE Settings
+.vs/
+.vscode/
+.idea/
+
+*.user
+
+# Build files
+**/bin/**
+**/obj/**
